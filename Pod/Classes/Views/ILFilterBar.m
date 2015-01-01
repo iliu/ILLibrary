@@ -15,7 +15,12 @@
 
 @end
 
+
 @implementation ILFilterBar
+
+@dynamic delegate;
+@dynamic dataSource;
+
 
 - (id) initWithButtonSpacing:(CGFloat)spacing andTopBottomInset:(UIEdgeInsets)inset {
     if (self = [super initWithButtonSpacing:spacing andTopBottomInset:inset]) {

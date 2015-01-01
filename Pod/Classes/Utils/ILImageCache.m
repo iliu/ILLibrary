@@ -8,6 +8,11 @@
 
 #import "ILImageCache.h"
 #import <FontAwesomeKit/FAKFontAwesome.h>
+#import <AFNetworking/AFNetworking.h>
+#import "UIColor+Helpers.h"
+#import "ILLibDefines.h"
+
+
 
 static NSMutableDictionary* _ILImageCache;
 @implementation ILImageCache
@@ -63,7 +68,7 @@ static NSMutableDictionary* _ILImageCache;
         } else {
             NSString *errorString = [NSString stringWithFormat:@"Cannot find file: %@", [path absoluteString]];
             NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: errorString };
-            completion(nil, [NSError errorWithDomain:PocketGMErrorDomain code:4 userInfo:userInfo], context);
+            completion(nil, [NSError errorWithDomain:ILLibraryErrorDomain code:4 userInfo:userInfo], context);
         }
     } else if ([scheme isEqualToString:@"http"]) {
         NSURLRequest *request = [NSURLRequest requestWithURL:path];
@@ -77,13 +82,13 @@ static NSMutableDictionary* _ILImageCache;
             } else {
                 NSString *errorString = [NSString stringWithFormat:@"UIImage imageWIthData Failed: %@", [path absoluteString]];
                 NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: errorString };
-                completion(nil, [NSError errorWithDomain:PocketGMErrorDomain code:4 userInfo:userInfo], context);
+                completion(nil, [NSError errorWithDomain:ILLibraryErrorDomain code:4 userInfo:userInfo], context);
             }
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSString *errorString = [NSString stringWithFormat:@"Download Failed: %@", [path absoluteString]];
             NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: errorString };
-            completion(nil, [NSError errorWithDomain:PocketGMErrorDomain code:4 userInfo:userInfo], context);
+            completion(nil, [NSError errorWithDomain:ILLibraryErrorDomain code:4 userInfo:userInfo], context);
         }];
         [requestOperation start];
         
@@ -91,7 +96,7 @@ static NSMutableDictionary* _ILImageCache;
     else {
         NSString *errorString = [NSString stringWithFormat:@"Unrecognized protocol: %@", scheme];
         NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: errorString };
-        completion(nil, [NSError errorWithDomain:PocketGMErrorDomain code:4 userInfo:userInfo], context);
+        completion(nil, [NSError errorWithDomain:ILLibraryErrorDomain code:4 userInfo:userInfo], context);
     }
 }
 
