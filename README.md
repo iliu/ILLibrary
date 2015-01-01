@@ -1,6 +1,6 @@
 # ILLibrary
 
-[![CI Status](http://img.shields.io/travis/Isaac Liu/ILLibrary.svg?style=flat)](https://travis-ci.org/Isaac Liu/ILLibrary)
+[![CI Status](http://img.shields.io/travis/iliu/ILLibrary.svg?style=flat)](https://travis-ci.org/iliu/ILLibrary)
 [![Version](https://img.shields.io/cocoapods/v/ILLibrary.svg?style=flat)](http://cocoadocs.org/docsets/ILLibrary)
 [![License](https://img.shields.io/cocoapods/l/ILLibrary.svg?style=flat)](http://cocoadocs.org/docsets/ILLibrary)
 [![Platform](https://img.shields.io/cocoapods/p/ILLibrary.svg?style=flat)](http://cocoadocs.org/docsets/ILLibrary)
