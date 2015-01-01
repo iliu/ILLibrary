@@ -2,6 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'ILLibrary', :exclusive => true do
   pod "ILLibrary", :path => "../"
+  pod 'FontAwesomeKit/FontAwesome'
 end
 
 target 'Tests', :exclusive => true do
