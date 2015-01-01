@@ -59,6 +59,6 @@ static char placeHolderImageKey;
     UIResponder *responder = self;
     while ([responder isKindOfClass:[UIView class]])
         responder = [responder nextResponder];
-        return responder;
+        return (UIViewController *)responder;
 }
 @end
