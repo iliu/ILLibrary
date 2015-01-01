@@ -14,7 +14,7 @@
 
 
 #import "ILImageCache.h"
-#import "ILDefines.h"
+#import "ILLibDefines.h"
 
 #import "NSAttributedString+Helpers.h"
 #import "NSLayoutConstraint+AutolayoutHelpers.h"
