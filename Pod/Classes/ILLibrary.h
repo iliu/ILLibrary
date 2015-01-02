@@ -24,5 +24,6 @@
 #import "UIImage+Helpers.h"
 #import "UILabel+Helpers.h"
 #import "UIView+Helpers.h"
+#import "NSDate+Helpers.h"
 
 #endif
