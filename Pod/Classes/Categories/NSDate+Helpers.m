@@ -367,6 +367,16 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
     return dTime;
 }
 
+- (NSDate *) dateWithTime:(NSDate *)time {
+    NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+    components.hour = time.hour;
+    components.minute = time.minute;
+    components.second = time.seconds;
+    
+    return [[NSDate currentCalendar] dateFromComponents:components];
+}
+
+
 #pragma mark - Extremes
 
 - (NSDate *) dateAtStartOfDay
