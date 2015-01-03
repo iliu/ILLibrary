@@ -12,4 +12,6 @@
 
 + (NSString *) ordinalNumberStringForInteger:(NSInteger)number;
 
++ (NSString *) pluralStringIfNeededForValue:(NSNumber *)number  singularForm:(NSString *)singularString pluralForm:(NSString *)pluralString;
+
 @end

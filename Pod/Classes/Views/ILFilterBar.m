@@ -24,6 +24,7 @@
 
 - (id) initWithButtonSpacing:(CGFloat)spacing andTopBottomInset:(UIEdgeInsets)inset {
     if (self = [super initWithButtonSpacing:spacing andTopBottomInset:inset]) {
+        _toggleMode = NO;
         self.buttonStates = NSMutableArray.new;
     }
     return self;
@@ -82,11 +83,29 @@
 }
 
 - (void)buttonHitWithIndex:(NSInteger)index {
-    if ([self.buttonStates[index] boolValue] == ILFilterButtonStateOff) {
-        self.buttonStates[index] = @(ILFilterButtonStateOn);
+    
+    if (self.toggleMode == NO) {
+        if ([self.buttonStates[index] boolValue] == ILFilterButtonStateOff) {
+            self.buttonStates[index] = @(ILFilterButtonStateOn);
+        } else {
+            self.buttonStates[index] = @(ILFilterButtonStateOff);
+        }
     } else {
-        self.buttonStates[index] = @(ILFilterButtonStateOff);
+        if ([self.buttonStates[index] boolValue] == ILFilterButtonStateOff) {
+            // also need to disable all other states
+            for (int i = 0; i < self.buttonStates.count; i++ ) {
+                if (i == index) {
+                    self.buttonStates[i] = @(ILFilterButtonStateOn);
+                } else {
+                    self.buttonStates[i] = @(ILFilterButtonStateOff);
+                }
+            }
+        } else {
+            // just turn it off (others are disabled already)
+            self.buttonStates[index] = @(ILFilterButtonStateOff);
+        }
     }
+    
     [self refreshButtonFilterState];
 }
 

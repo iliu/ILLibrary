@@ -35,4 +35,12 @@
     return [NSString stringWithFormat:@"%ld%@", (long)number, suffix];
 }
 
++ (NSString *) pluralStringIfNeededForValue:(NSNumber *)number  singularForm:(NSString *)singularString pluralForm:(NSString *)pluralString {
+    if ([number doubleValue] == 1.0) {
+        return singularString;
+    }
+    return pluralString;
+}
+
+
 @end

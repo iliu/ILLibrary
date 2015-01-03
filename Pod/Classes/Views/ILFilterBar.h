@@ -33,6 +33,7 @@ typedef NS_ENUM(NSInteger, ILFilterButtonState)
 
 @property (nonatomic, weak) id<ILFilterBarDelegate>delegate;
 @property (nonatomic, weak) id<ILFilterBarDataSource>dataSource;
+@property (nonatomic, assign) BOOL toggleMode;
 
 - (id) initWithButtonSpacing:(CGFloat)spacing andTopBottomInset:(UIEdgeInsets)inset;
 
