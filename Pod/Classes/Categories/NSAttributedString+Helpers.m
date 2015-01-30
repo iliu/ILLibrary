@@ -77,6 +77,34 @@
     return attrString;
 }
 
++ (NSMutableAttributedString *)attributeString:(NSString* )string withIcon:(UIImage *)icon FontName:(NSString *)fontName FontSize:(CGFloat)size FontColor:(UIColor *)color IconLocation:(ILAttributedStringIconLocation)location TextAlignment:(NSTextAlignment) alignment{
+
+    NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+    attachment.image = icon;
+    NSMutableAttributedString *imgAttrString = [[NSAttributedString attributedStringWithAttachment:attachment] mutableCopy];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init] ;
+    [paragraphStyle setAlignment:alignment];
+    [imgAttrString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [imgAttrString length])];
+    
+    
+    NSMutableAttributedString *myString = [NSAttributedString attributedStringWithString:string andFont:fontName andSize:size andAlignment:alignment andColor:color];
+    
+    if (location == ILAttributedStringIconLocationLeft || location == ILAttributedStringIconLocationRight) {
+        if (location == ILAttributedStringIconLocationLeft) {
+            [imgAttrString appendAttributedString:myString];
+            
+            return imgAttrString;
+        } else {
+            [myString appendAttributedString:imgAttrString];
+            return myString;
+        }
+    } else {
+        return nil;
+    }
+}
+
+
 + (NSMutableAttributedString *)verticalAlignedAttributeStringWithLabel:(NSString *)label withFontName:(NSString *)fontName andFontSize:(CGFloat)size andIcon:(UIImage *)icon {
     NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
     attachment.image = icon;
