@@ -14,7 +14,7 @@
 
 
 #import "ILImageCache.h"
-#import "ILSystemStateManager.h"
+#import "ILSystemStateMonitor.h"
 #import "ILLibDefines.h"
 
 #import "NSAttributedString+Helpers.h"
