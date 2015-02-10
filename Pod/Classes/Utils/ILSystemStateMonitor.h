@@ -24,6 +24,10 @@ typedef NS_ENUM(NSInteger, ILSystemStateAppState){
      *  Background
      */
     ILSystemStateAppStateBackground,
+    /**
+     *  Unknown
+     */
+    ILSystemStateAppStateUnknown
 };
 
 // Notification sent out when app state changes

@@ -77,9 +77,12 @@ NSString * const ILAppStateDidChangeNotification = @"com.isaacliu.illibrary.AppS
         newAppState = ILSystemStateAppStateForeground;
     } else if ([[note name] isEqualToString:UIApplicationDidEnterBackgroundNotification]) {
         newAppState = ILSystemStateAppStateBackground;
+    } else {
+        newAppState = ILSystemStateAppStateUnknown;
     }
     // update and broadcast
     self.appState = newAppState;
+    NSLog(@"[APP STATE]: %@", [[self class] appStateName:newAppState]);
     [[NSNotificationCenter defaultCenter] postNotificationName:ILAppStateDidChangeNotification object:self];
 }
 
