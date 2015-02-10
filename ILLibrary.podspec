@@ -36,4 +36,5 @@ s.source_files = 'Pod/Classes/**/*.{h,m}'
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'FontAwesomeKit/FontAwesome'
   s.dependency 'AFNetworking'
+  s.dependency 'Masonry'
 end
