@@ -10,5 +10,7 @@
 
 @interface UIButton (Helpers)
 
++ (UIButton *) buttonWithImage:(UIImage *)image AttributedString:(NSAttributedString *) attributedString;
+
 
 @end
