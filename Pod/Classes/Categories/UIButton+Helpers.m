@@ -37,4 +37,11 @@
 }
 
 
++ (UIButton *) buttonWithRoundedCorners {
+    UIButton *button = [UIButton new];
+    button.layer.cornerRadius = 5.0;
+    return button;
+}
+
+
 @end
