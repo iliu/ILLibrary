@@ -12,5 +12,6 @@
 
 + (UIButton *) buttonWithImage:(UIImage *)image AttributedString:(NSAttributedString *) attributedString;
 
++ (UIButton *) buttonWithRoundedCorners;
 
 @end

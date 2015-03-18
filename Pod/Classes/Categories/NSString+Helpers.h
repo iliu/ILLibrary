@@ -14,4 +14,6 @@
 
 + (NSString *) pluralStringIfNeededForValue:(NSNumber *)number  singularForm:(NSString *)singularString pluralForm:(NSString *)pluralString;
 
++ (CGFloat) heightForString:(NSString *)string font:(NSString *)fontName size:(CGFloat)size width:(CGFloat)width;
+
 @end

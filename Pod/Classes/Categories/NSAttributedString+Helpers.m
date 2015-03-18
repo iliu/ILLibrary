@@ -77,6 +77,35 @@
     return attrString;
 }
 
++ (NSMutableAttributedString *)attributedString:(NSString* )string withHorizontalIcon:(UIImage *)icon fontName:(NSString *)fontName fontSize:(CGFloat)size fontColor:(UIColor *)color iconLocation:(ILAttributedStringIconLocation)location textAlignment:(NSTextAlignment) alignment{
+
+    NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+    attachment.image = icon;
+    NSMutableAttributedString *imgAttrString = [[NSAttributedString attributedStringWithAttachment:attachment] mutableCopy];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init] ;
+    [paragraphStyle setAlignment:alignment];
+    [imgAttrString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [imgAttrString length])];
+    
+    
+    NSMutableAttributedString *myString = [NSAttributedString attributedStringWithString:string andFont:fontName andSize:size andAlignment:alignment andColor:color];
+    
+    if (location == ILAttributedStringIconLocationLeft || location == ILAttributedStringIconLocationRight) {
+        if (location == ILAttributedStringIconLocationLeft) {
+            [imgAttrString appendAttributedString:myString];
+            
+            return imgAttrString;
+        } else {
+            [myString appendAttributedString:imgAttrString];
+            return myString;
+        }
+    } else {
+        [NSException raise:@"Invalid location" format:@"Only IconLocationLeft and IconLocationRight is accepted"];
+    }
+    return nil;
+}
+
+
 + (NSMutableAttributedString *)verticalAlignedAttributeStringWithLabel:(NSString *)label withFontName:(NSString *)fontName andFontSize:(CGFloat)size andIcon:(UIImage *)icon {
     NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
     attachment.image = icon;

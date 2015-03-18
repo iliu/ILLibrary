@@ -42,5 +42,16 @@
     return pluralString;
 }
 
++ (CGFloat) heightForString:(NSString *)string font:(NSString *)fontName size:(CGFloat)size width:(CGFloat)width {
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:fontName size:size]};
+    // NSString class method: boundingRectWithSize:options:attributes:context is
+    // available only on ios7.0 sdk.
+    CGRect rect = [string boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX)
+                                            options:NSStringDrawingUsesLineFragmentOrigin
+                                         attributes:attributes
+                                            context:nil];
+    return rect.size.height;
+}
+
 
 @end

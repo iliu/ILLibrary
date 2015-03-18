@@ -10,6 +10,15 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKit.h>
 
+
+typedef NS_ENUM(NSInteger, ILAttributedStringIconLocation)
+{
+    ILAttributedStringIconLocationLeft,
+    ILAttributedStringIconLocationRight,
+    ILAttributedStringIconLocationTop,
+    ILAttributedStringIconLocationBottom
+};
+
 @interface NSAttributedString (Helpers)
 
 +(NSMutableAttributedString *) attributedStringWithString:(NSString *)string andFont:(NSString *)fontName andSize:(CGFloat)size andAlignment:(NSTextAlignment)alignment andColor:(UIColor *)color;
@@ -21,5 +30,9 @@
 + (NSMutableAttributedString *)centerAlignedAttributeStringWithString:(NSString *)string andFont:(NSString *)fontName andSize:(CGFloat) size;
 
 + (NSMutableAttributedString *)verticalAlignedAttributeStringWithLabel:(NSString *)label withFontName:(NSString *)fontName andFontSize:(CGFloat)size andIcon:(UIImage *)icon;
+
+
++ (NSMutableAttributedString *)attributedString:(NSString* )string withHorizontalIcon:(UIImage *)icon fontName:(NSString *)fontName fontSize:(CGFloat)size fontColor:(UIColor *)color iconLocation:(ILAttributedStringIconLocation)location textAlignment:(NSTextAlignment)alignment;
+
 
 @end
