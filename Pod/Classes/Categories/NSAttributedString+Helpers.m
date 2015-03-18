@@ -77,7 +77,7 @@
     return attrString;
 }
 
-+ (NSMutableAttributedString *)attributeString:(NSString* )string withIcon:(UIImage *)icon FontName:(NSString *)fontName FontSize:(CGFloat)size FontColor:(UIColor *)color IconLocation:(ILAttributedStringIconLocation)location TextAlignment:(NSTextAlignment) alignment{
++ (NSMutableAttributedString *)attributedString:(NSString* )string withHorizontalIcon:(UIImage *)icon fontName:(NSString *)fontName fontSize:(CGFloat)size fontColor:(UIColor *)color iconLocation:(ILAttributedStringIconLocation)location textAlignment:(NSTextAlignment) alignment{
 
     NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
     attachment.image = icon;
@@ -100,8 +100,9 @@
             return myString;
         }
     } else {
-        return nil;
+        [NSException raise:@"Invalid location" format:@"Only IconLocationLeft and IconLocationRight is accepted"];
     }
+    return nil;
 }
 
 

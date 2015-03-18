@@ -32,7 +32,7 @@ typedef NS_ENUM(NSInteger, ILAttributedStringIconLocation)
 + (NSMutableAttributedString *)verticalAlignedAttributeStringWithLabel:(NSString *)label withFontName:(NSString *)fontName andFontSize:(CGFloat)size andIcon:(UIImage *)icon;
 
 
-+ (NSMutableAttributedString *)attributeString:(NSString* )string withIcon:(UIImage *)icon FontName:(NSString *)fontName FontSize:(CGFloat)size FontColor:(UIColor *)color IconLocation:(ILAttributedStringIconLocation)location TextAlignment:(NSTextAlignment)alignment;
++ (NSMutableAttributedString *)attributedString:(NSString* )string withHorizontalIcon:(UIImage *)icon fontName:(NSString *)fontName fontSize:(CGFloat)size fontColor:(UIColor *)color iconLocation:(ILAttributedStringIconLocation)location textAlignment:(NSTextAlignment)alignment;
 
 
 @end
