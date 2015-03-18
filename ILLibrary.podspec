@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "ILLibrary"
-  s.version          = "0.1.1"
+  s.version          = "0.1.3"
   s.summary          = "A short description of ILLibrary."
   s.description      = <<-DESC
                        An optional longer description of ILLibrary
@@ -18,16 +18,14 @@ Pod::Spec.new do |s|
                        * Don't worry about the indent, we strip it!
                        DESC
   s.homepage         = "https://github.com/iliu/ILLibrary"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Isaac Liu" => "liu.isaac@gmail.com" }
   s.source           = { :git => "https://github.com/iliu/ILLibrary.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-s.source_files = 'Pod/Classes/**/*.{h,m}'
+  s.source_files = 'Pod/Classes/**/*.{h,m}'
   s.resource_bundles = {
     'ILLibrary' => ['Pod/Assets/*.png']
   }
