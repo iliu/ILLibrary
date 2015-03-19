@@ -28,5 +28,6 @@
 #import "NSDate+Helpers.h"
 #import "NSNumber+Helpers.h"
 #import "UITableViewCell+Helpers.h"
+#import "UIAlertView+Helpers.h"
 
 #endif
