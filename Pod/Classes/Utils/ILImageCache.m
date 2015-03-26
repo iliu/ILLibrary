@@ -70,7 +70,7 @@ static NSMutableDictionary* _ILImageCache;
             NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: errorString };
             completion(nil, [NSError errorWithDomain:ILLibraryErrorDomain code:4 userInfo:userInfo], context);
         }
-    } else if ([scheme isEqualToString:@"http"]) {
+    } else if ([scheme isEqualToString:@"http"] || [scheme isEqualToString:@"https"]) {
         NSURLRequest *request = [NSURLRequest requestWithURL:path];
         AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
         
